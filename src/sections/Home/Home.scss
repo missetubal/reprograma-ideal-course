@@ -1,0 +1,35 @@
+.home-container {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.home-left {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 3rem;
+
+  h1 {
+    font-weight: 700;
+    font-size: 68px;
+    line-height: 80px;
+  }
+  p {
+    font-weight: 400;
+    font-size: 23px;
+    width: 70%;
+    text-align: justify;
+    margin: 20px 0px;
+  }
+}
+
+.home-right {
+  img {
+    max-width: 120%;
+    min-width: 20%;
+  }
+}
