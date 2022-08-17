@@ -1,0 +1,25 @@
+.button-container {
+  button {
+    margin-top: 20px;
+    background-color: var(--primary);
+    width: 30%;
+    padding: 10px 10px;
+    border-radius: 8px;
+    :disabled {
+      background-color: rgb(137, 137, 137);
+      border: none;
+    }
+  }
+
+  a {
+    text-decoration: none;
+    color: white;
+    transition: 0.3s;
+  }
+
+  :hover {
+    background-color: white;
+    color: var(--primary);
+    border: 1px solid var(--primary);
+  }
+}
