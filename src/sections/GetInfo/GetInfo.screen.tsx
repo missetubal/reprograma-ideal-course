@@ -1,20 +1,22 @@
-import React, {
-  ChangeEventHandler,
-  HTMLInputTypeAttribute,
-  useEffect,
-  useState,
-} from "react";
-import { Button } from "../../Components/Button/Button.component";
+import React, { useEffect, useState } from "react";
+import { NavigateOptions, useNavigate, useParams } from "react-router-dom";
+import { Button } from "../../components/Button/Button.component";
 import "./GetInfo.scss";
 
 export const GetInfo = () => {
   const [date, setDate] = useState("");
-  const [disable, setIsDisable] = useState(false);
+  const [disable, setIsDisable] = useState(true);
+  const [id, setId] = useState("");
+  const navigation = useNavigate();
+  const userId = {
+    id: id,
+    date: date,
+  };
 
   useEffect(() => {
-    console.log(date);
-    if (date === "") setIsDisable(true);
-  });
+    setIsDisable(!!date);
+  }, [date]);
+
   return (
     <div className="get-info-container" id="get-info">
       <div className="get-info-left">
@@ -29,10 +31,15 @@ export const GetInfo = () => {
         </span>
         <form action="">
           <div className="question">
-            <label htmlFor="id" defaultValue="Selecione">
-              Como você se identifica?
-            </label>
-            <select name="id" id="id" required defaultValue="Selecionar">
+            <label htmlFor="id">Como você se identifica?</label>
+            <select
+              name="id"
+              id="id"
+              onChange={(event) => setId(event.target.value)}
+            >
+              <option disabled selected value="none">
+                Selecione
+              </option>
               <option value="cis">Mulher Cisgenero</option>
               <option value="trans">Mulher Transgênero</option>
             </select>
@@ -44,11 +51,17 @@ export const GetInfo = () => {
               name="birth"
               id="birth"
               value={date}
-              onChange={(e) => setDate(e.toString)}
+              onChange={(event) => setDate(event.target.value)}
             />
           </div>
         </form>
-        <Button title="Próximo" href="#" disable={disable} />
+        <Button
+          title="Próximo"
+          onClick={() =>
+            navigation(`/login/${userId}`, userId as NavigateOptions)
+          }
+          disable={!disable}
+        />
       </div>
       <div className="get-info-right">
         <img
