@@ -1,6 +1,7 @@
 import React from "react";
 import "./Navbar.scss";
 import Logo from "../../assets/logo-reprograma.png";
+import { Link } from "react-router-dom";
 
 export const Navbar = () => {
   return (
@@ -12,19 +13,19 @@ export const Navbar = () => {
           <div className="nav_menu">
             <ul className="nav_options">
               <li className="nav_item">
-                <a href="" className="nav_link">
+                <Link to="/" className="nav_link">
                   Inicio
-                </a>
+                </Link>
               </li>
               <li className="nav_item">
-                <a href="" className="nav_link">
+                <Link to="" className="nav_link">
                   Sobre a Reprograma
-                </a>
+                </Link>
               </li>
               <li className="nav_item">
-                <a href="" className="nav_link">
+                <Link to="" className="nav_link">
                   Contato
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

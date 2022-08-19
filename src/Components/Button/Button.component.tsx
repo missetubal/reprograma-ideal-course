@@ -5,12 +5,8 @@ import { ButtonProps } from "./Button.types";
 
 export const Button: React.FC<ButtonProps> = (props) => {
   return (
-    <div className="button-container">
-      <Link to={props.href}>
-        <button disabled={props.disable}>{props.title}</button>
-      </Link>
-      {/* <a href={props.href}> */}
-      {/* </a> */}
-    </div>
+    <Link to={props.href} className="button-container">
+      <button disabled={props.disable}>{props.title}</button>
+    </Link>
   );
 };
