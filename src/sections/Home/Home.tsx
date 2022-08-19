@@ -1,8 +1,10 @@
 import React from "react";
-import { Button } from "../../Components/Button/Button.component";
+import { useNavigate } from "react-router-dom";
+import { Button } from "../../components/Button/Button.component";
 import "./Home.scss";
 
 export const Home = () => {
+  const navigation = useNavigate();
   return (
     <div className="home-container">
       <div className="home-left">
@@ -11,7 +13,7 @@ export const Home = () => {
           Esse é o Ideal Course, construido para mulheres, por mulheres que um
           dia também não sabiam por onde começar
         </p>
-        <Button title="Vamos Começar?" href="#get-info" />
+        <Button title="Vamos Começar?" onClick={() => navigation("/login")} />
       </div>
       <div className="home-right">
         <img
