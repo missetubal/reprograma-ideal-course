@@ -5,15 +5,12 @@
     width: 30%;
     padding: 10px 10px;
     border-radius: 8px;
-    :disabled {
-      background-color: rgb(137, 137, 137);
-      border: none;
-    }
+    color: white;
+    border: none;
   }
 
-  a {
+  link {
     text-decoration: none;
-    color: white;
     transition: 0.3s;
   }
 
@@ -21,5 +18,15 @@
     background-color: white;
     color: var(--primary);
     border: 1px solid var(--primary);
+
+    :disabled {
+      color: white;
+      border: none;
+    }
+  }
+
+  :disabled {
+    background-color: rgb(137, 137, 137);
+    border: none;
   }
 }
