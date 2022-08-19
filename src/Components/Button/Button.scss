@@ -1,28 +1,19 @@
-.button-container {
-  button {
-    margin-top: 20px;
-    background-color: var(--primary);
-    width: 30%;
-    padding: 10px 10px;
-    border-radius: 8px;
-    color: white;
-    border: none;
-  }
-
-  link {
-    text-decoration: none;
-    transition: 0.3s;
-  }
+button {
+  margin-top: 20px;
+  background-color: var(--primary);
+  width: 30%;
+  padding: 10px 10px;
+  border-radius: 8px;
+  color: white;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.5s;
 
   :hover {
     background-color: white;
     color: var(--primary);
     border: 1px solid var(--primary);
-
-    :disabled {
-      color: white;
-      border: none;
-    }
   }
 
   :disabled {
@@ -30,3 +21,17 @@
     border: none;
   }
 }
+
+// button {
+//   background-color: var(--primary);
+//   color: white;
+//   padding: 10px 25px;
+//   border-style: none;
+//   border-radius: 10px;
+//   margin-top: 40px;
+//   margin-left: 20px;
+//   transition: 0.5s;
+//   :hover {
+//     background-color: #ffbb33;
+//   }
+// }
