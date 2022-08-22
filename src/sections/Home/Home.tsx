@@ -13,7 +13,10 @@ export const Home = () => {
           Esse é o Ideal Course, construido para mulheres, por mulheres que um
           dia também não sabiam por onde começar
         </p>
-        <Button title="Vamos Começar?" onClick={() => navigation("/login")} />
+        <Button
+          title="Vamos Começar?"
+          onClick={() => navigation("/get-info")}
+        />
       </div>
       <div className="home-right">
         <img
