@@ -1,21 +1,24 @@
-import React, { useEffect, useState } from "react";
-import { NavigateOptions, useNavigate, useParams } from "react-router-dom";
+import { useContext, useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button/Button.component";
+import UserContext from "../../services/Context/Context";
 import "./GetInfo.scss";
 
 export const GetInfo = () => {
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState<string>("");
   const [disable, setIsDisable] = useState(true);
-  const [id, setId] = useState("");
+  const [id, setId] = useState<string>("");
   const navigation = useNavigate();
-  const userId = {
-    id: id,
-    date: date,
-  };
+  const { setState: setState } = useContext(UserContext);
 
   useEffect(() => {
-    setIsDisable(!!date);
+    setIsDisable(!!!date);
   }, [date]);
+
+  function handleOnClick() {
+    setState({ id, date });
+    navigation(`/login`);
+  }
 
   return (
     <div className="get-info-container" id="get-info">
@@ -40,8 +43,8 @@ export const GetInfo = () => {
               <option disabled selected value="none">
                 Selecione
               </option>
-              <option value="cis">Mulher Cisgenero</option>
-              <option value="trans">Mulher Transgênero</option>
+              <option value="Mulher Cisgenero">Mulher Cisgenero</option>
+              <option value="Mulher Trans">Mulher Transgênero</option>
             </select>
           </div>
           <div className="question">
@@ -55,13 +58,7 @@ export const GetInfo = () => {
             />
           </div>
         </form>
-        <Button
-          title="Próximo"
-          onClick={() =>
-            navigation(`/login/${userId}`, userId as NavigateOptions)
-          }
-          disable={!disable}
-        />
+        <Button title="Próximo" onClick={handleOnClick} disable={disable} />
       </div>
       <div className="get-info-right">
         <img
