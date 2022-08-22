@@ -15,23 +15,10 @@ button {
     color: var(--primary);
     border: 1px solid var(--primary);
   }
-
-  :disabled {
-    background-color: rgb(137, 137, 137);
-    border: none;
-  }
 }
 
-// button {
-//   background-color: var(--primary);
-//   color: white;
-//   padding: 10px 25px;
-//   border-style: none;
-//   border-radius: 10px;
-//   margin-top: 40px;
-//   margin-left: 20px;
-//   transition: 0.5s;
-//   :hover {
-//     background-color: #ffbb33;
-//   }
-// }
+:disabled {
+  background-color: rgb(137, 137, 137);
+  border: none;
+  cursor: not-allowed;
+}

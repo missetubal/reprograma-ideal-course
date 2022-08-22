@@ -4,5 +4,5 @@ export interface ButtonProps {
   title: string;
   onClick: () => void;
   disable?: boolean;
-  params?: NavigateOptions;
+  className?: string;
 }
