@@ -6,7 +6,8 @@ import { Home } from "./sections/Home/Home";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Login from "./sections/Login/Login.screen";
 import { GlobalContext } from "./services/Context/Context";
-import { Quiz } from "./sections/Quiz/Quiz.screen";
+import { Quiz } from "./sections/Quiz/Quiz.component";
+import { Results } from "./sections/Results/Results.component";
 
 function App() {
   return (
@@ -19,10 +20,8 @@ function App() {
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
               <Route path="/get-info" element={<GetInfo />} />
-              <Route path="/quiz1" element={<Quiz />} />
-              <Route path="/quiz2" element={<Quiz />} />
-              <Route path="/quiz3" element={<Quiz />} />
-              <Route path="/quiz4" element={<Quiz />} />
+              <Route path="/quiz" element={<Quiz />} />
+              <Route path="/results" element={<Results />} />
             </Routes>
           </div>
         </Router>

@@ -1,19 +1,23 @@
 export const quizData = [
   {
     id: 1,
+
     question: "Prefiro fotografar lugares do que ler livros",
     options: [
       {
         description: "Sim",
         score: 10,
+        checked: false,
       },
       {
         description: "Não",
         score: -10,
+        checked: false,
       },
       {
         description: "Os dois/nenhum dos dois",
         score: 0,
+        checked: false,
       },
     ],
   },
@@ -24,14 +28,17 @@ export const quizData = [
       {
         description: "Sim",
         score: 10,
+        checked: false,
       },
       {
         description: "Não",
         score: -10,
+        checked: false,
       },
       {
         description: "Igualmente importantes",
         score: 0,
+        checked: false,
       },
     ],
   },
@@ -42,14 +49,17 @@ export const quizData = [
       {
         description: "Sim",
         score: 10,
+        checked: false,
       },
       {
         description: "Não",
         score: -10,
+        checked: false,
       },
       {
         description: "Os dois/nenhum dos dois",
         score: 0,
+        checked: false,
       },
     ],
   },
@@ -61,10 +71,12 @@ export const quizData = [
       {
         description: "Sim",
         score: 10,
+        checked: false,
       },
       {
         description: "Não",
         score: -10,
+        checked: false,
       },
     ],
   },
@@ -75,14 +87,17 @@ export const quizData = [
       {
         description: "Sim",
         score: 10,
+        checked: false,
       },
       {
         description: "Não",
         score: -10,
+        checked: false,
       },
       {
         description: "Prefiro igualmente todas",
         score: 0,
+        checked: false,
       },
     ],
   },

@@ -1,0 +1,64 @@
+.quiz-container {
+  display: flex;
+  flex-direction: column;
+}
+.questions {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+.question-card-container {
+  width: 50%;
+  max-width: 40%;
+  height: auto;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  margin-left: 10%;
+  padding: 20px;
+  border: 1px solid purple;
+  border-radius: 10px;
+
+  h1 {
+    font-size: 25px;
+    text-transform: uppercase;
+    letter-spacing: 10px;
+    font-weight: 600;
+    color: gray;
+    margin-bottom: 20px;
+  }
+
+  p {
+    margin: 0px 0px 20px 20px;
+  }
+}
+
+.question-options {
+  margin-left: 20px;
+  label,
+  input {
+    padding: 15px;
+  }
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-top: 20px;
+}
+
+.profile {
+  margin: auto;
+  padding: 0 100px;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  h2 {
+    margin-bottom: 25px;
+  }
+  img {
+    width: auto;
+    height: auto;
+  }
+}
