@@ -3,6 +3,8 @@ import { ReactNode } from "react";
 type UserType = {
   date: string;
   id: string;
+  name: string;
+  picture: string;
 };
 
 export type UserContextProps = {
@@ -18,6 +20,8 @@ export const USER_DEFAULT = {
   state: {
     date: "",
     id: "",
+    name: "",
+    picture: "",
   },
   setState: () => {},
 };

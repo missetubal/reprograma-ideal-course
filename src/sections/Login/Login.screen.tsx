@@ -9,10 +9,11 @@ import "./Login.scss";
 
 const Login: React.FC = () => {
   const [users, setUsers] = useState<any>();
-  const { state } = useContext(UserContext);
+  const { state, setState } = useContext(UserContext);
   const [login, loginNoPressed] = useState(true);
   const [loading, isLoading] = useState(true);
   const navigation = useNavigate();
+
   useEffect(() => {
     api
       .get("/api")
@@ -23,7 +24,14 @@ const Login: React.FC = () => {
       });
   }, []);
 
-  console.log(users);
+  function handleOnClick() {
+    setState({
+      ...state,
+      name: users.results[0].name.first + " " + users.results[0].name.last,
+      picture: users.results[0].picture.large,
+    });
+    navigation("/quiz");
+  }
 
   return (
     <>
@@ -75,7 +83,7 @@ const Login: React.FC = () => {
             <Button
               className="button"
               title="Próximo"
-              onClick={() => navigation("/quiz1")}
+              onClick={() => handleOnClick()}
               disable={login}
             />
           </div>
