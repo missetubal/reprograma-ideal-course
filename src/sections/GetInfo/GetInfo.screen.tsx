@@ -1,3 +1,4 @@
+import moment from "moment";
 import { useContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { Button } from "../../components/Button/Button.component";
@@ -9,17 +10,28 @@ export const GetInfo = () => {
   const [disable, setIsDisable] = useState(true);
   const [id, setId] = useState<string>("");
   const navigation = useNavigate();
-  const { setState: setState } = useContext(UserContext);
+  const { state, setState: setState } = useContext(UserContext);
+  const [error, setError] = useState("");
 
   useEffect(() => {
     setIsDisable(!!!date);
   }, [date]);
 
   function handleOnClick() {
-    setState({ id, date });
-    navigation(`/login`);
+    const formatDate = console.log(dif);
+    if (Number(dif.split("", 2)) < 18) {
+      setError("Você deve ser maior de 18 anos");
+      setIsDisable(true);
+    } else {
+      setState({ ...state, id, date });
+      navigation(`/login`);
+    }
   }
 
+  // function validateDate(date: string) {
+  //   const dif = moment(date, "YYYY-MM-DD").fromNow();
+  //   if (Number(dif.split("", 2)) < 18) return "Você deve ser maior de 18 anos";
+  // }
   return (
     <div className="get-info-container" id="get-info">
       <div className="get-info-left">

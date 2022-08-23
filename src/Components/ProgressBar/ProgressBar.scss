@@ -1,0 +1,26 @@
+.progress-container {
+  display: flex;
+  flex-direction: row;
+  padding: 5%;
+  justify-content: space-around;
+
+  li {
+    list-style-type: none;
+    width: 30px;
+    height: 30px;
+    background-color: white;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 50%;
+    border: 3px solid var(--primary);
+    transition: background-color 0.75s, color 0.5s;
+  }
+}
+
+.step.current,
+.step.complete {
+  li {
+    background-color: var(--primary);
+    color: white;
+  }
+}
