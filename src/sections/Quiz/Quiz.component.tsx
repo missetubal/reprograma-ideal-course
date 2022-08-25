@@ -17,12 +17,15 @@ export const Quiz: React.FC = () => {
 
   function handleOnClickNext(id: number, value: number) {
     setIndex(id + 1);
+    setscores([...scores, value]);
+
     if (id < quizData.length) {
-      setscores([...scores, value]);
       isDisable(true);
       isChecked(false);
     } else {
-      navigation("/results", { state: { scores: scores, total: total } });
+      navigation("/results", {
+        state: { scores: scores, total: total, profile: profile },
+      });
     }
   }
 
@@ -33,8 +36,6 @@ export const Quiz: React.FC = () => {
     }
     return soma;
   }, [scores]);
-
-  console.log(total, profile);
 
   function handleOnClickPrev(id: number, value: number) {
     setIndex(id - 1);
@@ -48,9 +49,9 @@ export const Quiz: React.FC = () => {
   useEffect(() => {
     if (total > 0) setProfile("front");
     if (total < 0) setProfile("back");
-    if (total === 0) {
-      if (index > 1) setProfile("full");
-    }
+    // if (total === 0) {
+    //   if (index > 1) setProfile("full");
+    // }
     if (index === 1) setProfile("");
   });
 
@@ -63,10 +64,10 @@ export const Quiz: React.FC = () => {
         <div className="question-card-container">
           <h1>Questão{currentQuiz[0].id}</h1>
           <p>{currentQuiz[0].question}</p>
-          {currentQuiz[0].options.map((option: any) => {
+          {currentQuiz[0].options.map((option: any, index) => {
             return (
               <>
-                <div className="question-options" key={option.id}>
+                <div className="question-options" key={index}>
                   <input
                     className="question-radio-input"
                     type="radio"
@@ -120,7 +121,7 @@ export const Quiz: React.FC = () => {
               <p>Back-End</p>
             </div>
           )}
-          {profile === "full" && (
+          {/* {profile === "full" && (
             <div>
               <img
                 src="https://cdni.iconscout.com/illustration/premium/thumb/full-stack-developer-4316247-3611090.png"
@@ -130,7 +131,7 @@ export const Quiz: React.FC = () => {
               />
               <p>Fullstack</p>
             </div>
-          )}
+          )} */}
         </div>
       </div>
     </div>
