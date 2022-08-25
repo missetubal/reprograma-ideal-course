@@ -22,11 +22,11 @@ export const Navbar = () => {
                   Sobre a Reprograma
                 </Link>
               </li>
-              <li className="nav_item">
+              {/* <li className="nav_item">
                 <Link to="" className="nav_link">
                   Contato
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
         </nav>
