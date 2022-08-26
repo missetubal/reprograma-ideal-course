@@ -74,3 +74,28 @@
   top: 40vh;
   left: 50vw;
 }
+
+@media (max-width: 785px) {
+  .login-info {
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .login-right {
+    justify-content: center;
+    .button {
+      margin: auto;
+    }
+    p {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .login-container {
+    flex-direction: column;
+  }
+  .login-left {
+    margin: auto;
+  }
+}

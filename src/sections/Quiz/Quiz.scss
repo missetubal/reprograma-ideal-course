@@ -62,3 +62,31 @@
     height: 80%;
   }
 }
+
+@media (max-width: 785px) {
+  .login-info {
+    flex-wrap: wrap;
+    margin-top: 20px;
+  }
+  .login-right {
+    justify-content: center;
+    .button {
+      margin: auto;
+    }
+    p {
+      margin-bottom: 30px;
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .questions {
+    flex-direction: column;
+  }
+  .question-card-container {
+    width: 100%;
+    min-width: fit-content;
+    margin: auto;
+    margin-bottom: 50px;
+  }
+}

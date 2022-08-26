@@ -20,7 +20,7 @@ export const Home = () => {
       </div>
       <div className="home-right">
         <img
-          src="https://img.freepik.com/vetores-premium/jovem-mulher-pensando-com-ponto-de-interrogacao-na-bolha-do-discurso-a-menina-pensa-sobre-o-problema-e-as-duvidas_501173-156.jpg"
+          src="https://www.pngall.com/wp-content/uploads/4/Thinking-Woman-PNG-Free-Download.png"
           alt=""
         />
       </div>

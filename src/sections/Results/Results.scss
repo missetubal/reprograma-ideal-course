@@ -61,3 +61,27 @@
     padding-top: 5px;
   }
 }
+
+@media (max-width: 940px) {
+  .results-container {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: auto;
+    img {
+      margin: 0px;
+    }
+  }
+  .results-info {
+    width: 100%;
+    margin: auto;
+  }
+  .results-profile {
+    justify-content: center;
+    margin-top: 50px;
+
+    img {
+      margin-right: 50px;
+    }
+  }
+}

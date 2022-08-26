@@ -41,7 +41,7 @@ export const GetInfo = () => {
         <span>
           Antes de começarmos, você poderia nos responder algumas perguntas?
         </span>
-        <form action="">
+        <div className="get-info-inputs">
           <div className="question">
             <label htmlFor="id">Como você se identifica?</label>
             <select
@@ -66,9 +66,8 @@ export const GetInfo = () => {
               onChange={(event) => setDate(event.target.value)}
             />
           </div>
-        </form>
+        </div>
         {error && <p className="error">{error}</p>}
-
         <Button title="Próximo" onClick={handleOnClick} disable={disable} />
       </div>
       <div className="get-info-right">
